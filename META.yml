@@ -1,0 +1,20 @@
+name: File-BLOB
+version: 0.01
+abstract: A file (with name, and other metadata) you can BLOBify
+author: Adam Kennedy <adam@phase-n.com>
+license: unknown
+distribution_type: module
+build_requires:
+  File::Spec: 0.80
+  Test::More: 0.47
+requires:
+  perl: 5.005
+  bytes: 0
+  Carp: 0
+  File::Basename: 0
+  Storable: 0
+  Params::Util: 0.06
+no_index:
+  directory:
+    - inc
+generated_by: Module::Install version 0.37
