@@ -103,16 +103,21 @@ new
   from_cgi
       my $file = File::BLOB->from_cgi( $CGI, 'param' );
 
-    (NOT YET IMPLEMENTED)
-
-    The "from_cgi" constructor will allow creation of a "File::BLOB" object
+    The "from_cgi" constructor allows you to create a "File::BLOB" object
     from a named file upload field in a CGI form.
 
     It takes a CGI object and a CGI param name. Only a single file upload
     for the param is supported.
 
-    Returns a new "File::BLOB" object, false ('') if there was no file
-    upload (or a file was not selected), or dies on error.
+    When called in list context, the "from_cgi" method will return a list of
+    "File::BLOB" objects, or the null list of there are no uploaded files
+    for the param.
+
+    When called in scalar context, the "from_cgi" method return a single
+    "File::BLOB" object (if more than one the first), or false ('') if there
+    are no file uploads.
+
+    An exception will be thrown if an error is encountered.
 
   get_content
       my $data = $file->get_content;
@@ -196,7 +201,7 @@ new
 SUPPORT
     Bugs should be reported via the CPAN bug tracker at
 
-    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=File-Storable>
+    <http://rt.cpan.org/NoAuth/ReportBug.html?Queue=File-BLOB>
 
     For other issues, contact the author.
 

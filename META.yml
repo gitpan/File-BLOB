@@ -1,5 +1,5 @@
 name: File-BLOB
-version: 0.01
+version: 0.02
 abstract: A file (with name, and other metadata) you can BLOBify
 author: Adam Kennedy <adam@phase-n.com>
 license: unknown
