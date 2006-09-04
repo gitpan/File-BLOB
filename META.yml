@@ -1,17 +1,17 @@
-abstract: 'A file (with name, and other metadata) you can BLOBify'
-author: 'Adam Kennedy <adam@phase-n.com>'
-build_requires:
+abstract: A file (with name, and other metadata) you can BLOBify
+author: Adam Kennedy <adam@phase-n.com>
+build_requires: 
   File::Spec: 0.80
   Test::More: 0.47
 distribution_type: module
-generated_by: Module::Install version 0.52
+generated_by: Module::Install version 0.63
 license: perl
 name: File-BLOB
-no_index:
-  directory:
+no_index: 
+  directory: 
     - inc
     - t
-requires:
+requires: 
   Carp: 0
   File::Basename: 0
   File::Type: 0
@@ -19,4 +19,4 @@ requires:
   Storable: 0
   bytes: 0
   perl: 5.005
-version: 0.03
+version: 0.04
