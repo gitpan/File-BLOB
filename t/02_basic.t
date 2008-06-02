@@ -1,22 +1,15 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 # Basic functionality testing for File::BLOB
 
 use strict;
-use lib ();
-use UNIVERSAL 'isa';
-use File::Spec::Functions ':ALL';
 BEGIN {
-	$| = 1;
-	unless ( $ENV{HARNESS_ACTIVE} ) {
-		require FindBin;
-		$FindBin::Bin = $FindBin::Bin; # Avoid a warning
-		chdir catdir( $FindBin::Bin, updir() );
-		lib->import('blib', 'lib');
-	}
+	$|  = 1;
+	$^W = 1;
 }
 
 use Test::More tests => 26;
+use File::Spec::Functions ':ALL';
 use File::BLOB ();
 
 
@@ -74,5 +67,3 @@ foreach my $file ( $file1, $file2, $file3 ) {
 	isa_ok( $thawed, 'File::BLOB' );
 	is_deeply( $file, $thawed, 'Thawed File::BLOB object matched original' );
 }
-
-exit(0);

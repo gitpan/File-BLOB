@@ -16,6 +16,8 @@ README
 t/01_compile.t
 t/02_basic.t
 t/03_cgi.t
-t/99_pod.t
+t/97_meta.t
+t/98_pod.t
+t/99_pmv.t
 t/data/image.gif
 t/data/image.jpg
