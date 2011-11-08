@@ -6,14 +6,14 @@ SYNOPSIS
       $file = File::BLOB->new( 'data'         ); # Copies
       $file = File::BLOB->new( \$data         ); # Doesn't copy
       $file = File::BLOB->new( $filehandle    );
-  
-      # Create from an existing file
+      
+  # Create from an existing file
       $file = File::BLOB->from_file( 'filename.txt' );
-  
-      # Create from a file uploaded via CGI
+      
+  # Create from a file uploaded via CGI
       $file = File::BLOB->from_cgi( $CGI, 'param' );
-  
-      # You can assign arbitrary headers/metadata when creating objects
+      
+  # You can assign arbitrary headers/metadata when creating objects
       $file = File::BLOB->new( 'filename.txt',
             content_type => 'text/plain',
             filename     => 'myname.txt',
@@ -22,16 +22,16 @@ SYNOPSIS
       if ( $file->get_header('filename') eq 'filename.txt' ) {
             $file->set_header( 'filename' => 'yourname.txt' );
       }
-  
-      # Get or change the content
+      
+  # Get or change the content
       if ( $file->get_content =~ /FOO/ ) {
             my $backup = $file->get_content;
             $file->set_content( 'data'      );
             $file->set_content( \$data      );
             $file->set_content( $filehandle );
       }
-  
-      # Freeze to and thaw from a BLOB
+      
+  # Freeze to and thaw from a BLOB
       my $blob = $file->freeze;
       $file = File::BLOB->thaw( $blob );
 
@@ -165,8 +165,8 @@ new
   set_header
       # Set a header
       $file->set_header('filename', 'foo.txt');
-  
-      # Delete a header
+      
+  # Delete a header
       $file->set_header('filename', undef    );
 
     The "set_header" method takes a header name and a value, and sets the
@@ -209,7 +209,7 @@ AUTHOR
     Adam Kennedy <adamk@cpan.org>
 
 COPYRIGHT
-    Copyright 2005 - 2008 Adam Kennedy.
+    Copyright 2005 - 2011 Adam Kennedy.
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
